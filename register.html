@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — GreenLeaf Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body style="background: none;">
+<div class="login-page">
+  <div class="login-left">
+    <div class="login-left-content">
+      <div class="logo" style="color:white; margin-bottom:2.5rem;"><span class="logo-icon">🌿</span> GreenLeaf</div>
+      <h2>Start your journey<br>with nature.</h2>
+      <p>Create your free account and explore a world of organic, sustainable, and eco-friendly products.</p>
+      <div class="login-perks">
+        <div class="login-perk"><span class="icon">🎁</span> ₹200 off your first order</div>
+        <div class="login-perk"><span class="icon">⭐</span> Earn GreenPoints on every purchase</div>
+        <div class="login-perk"><span class="icon">📦</span> Track orders in real-time</div>
+        <div class="login-perk"><span class="icon">💚</span> Exclusive member-only deals</div>
+      </div>
+    </div>
+  </div>
+  <div class="login-right">
+    <div class="login-box">
+      <h1>Create account</h1>
+      <p class="subtitle">Join the GreenLeaf community today</p>
+      <form id="reg-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="fname" placeholder="Aarav" required />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lname" placeholder="Sharma" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="reg-pass" placeholder="Min. 8 characters" required />
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input type="password" id="reg-confirm" placeholder="Repeat password" required />
+        </div>
+        <div id="reg-error" style="display:none; background:#FEE2E2; color:#991B1B; padding:0.75rem 1rem; border-radius:8px; font-size:0.85rem; margin-bottom:1rem;"></div>
+        <button type="submit" class="btn btn-primary btn-full btn-lg">Create Account</button>
+      </form>
+      <div class="login-footer" style="margin-top:1.5rem;">
+        Already have an account? <a href="index.html">Sign in</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('reg-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const lname = document.getElementById('lname').value.trim();
+    const email = document.getElementById('reg-email').value.trim();
+    const pass  = document.getElementById('reg-pass').value;
+    const conf  = document.getElementById('reg-confirm').value;
+    const err   = document.getElementById('reg-error');
+    if (!fname || !lname || !email || !pass) { err.textContent='All fields are required.'; err.style.display='block'; return; }
+    if (pass !== conf) { err.textContent='Passwords do not match.'; err.style.display='block'; return; }
+    if (pass.length < 8) { err.textContent='Password must be at least 8 characters.'; err.style.display='block'; return; }
+    err.style.display='none';
+    localStorage.setItem('greenleaf_user', JSON.stringify({ email, name: fname+' '+lname }));
+    window.location.href = 'home.html';
+  });
+</script>
+</body>
+</html>

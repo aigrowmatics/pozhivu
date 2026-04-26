@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In — GreenLeaf Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body style="background: none;">
+
+<div class="login-page">
+  <!-- LEFT PANEL -->
+  <div class="login-left">
+    <div class="login-left-content">
+      <div class="logo" style="color:white; margin-bottom:2.5rem;">
+        <span class="logo-icon">🌿</span> GreenLeaf
+      </div>
+      <h2>Nature's finest,<br>delivered to you.</h2>
+      <p>Join thousands of customers who trust GreenLeaf for premium organic and eco-friendly products sourced from nature.</p>
+      <div class="login-perks">
+        <div class="login-perk"><span class="icon">🌱</span> 100% Organic &amp; Certified Products</div>
+        <div class="login-perk"><span class="icon">🚚</span> Free Shipping on orders over ₹999</div>
+        <div class="login-perk"><span class="icon">🔄</span> 30-Day Easy Returns</div>
+        <div class="login-perk"><span class="icon">🔒</span> Secure &amp; Encrypted Checkout</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="login-right">
+    <div class="login-box">
+      <h1>Welcome back 👋</h1>
+      <p class="subtitle">Sign in to your GreenLeaf account</p>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" autocomplete="email" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" required />
+          <div style="text-align:right; margin-top:0.4rem;">
+            <a href="#" style="font-size:0.82rem; color:var(--green-700);">Forgot password?</a>
+          </div>
+        </div>
+
+        <div id="login-error" style="display:none; background:#FEE2E2; color:#991B1B; padding:0.75rem 1rem; border-radius:8px; font-size:0.85rem; margin-bottom:1rem;"></div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-lg" id="login-btn">Sign In</button>
+      </form>
+
+      <div class="divider"><span>or continue with</span></div>
+
+      <div style="display:flex; gap:0.75rem;">
+        <button class="btn btn-outline btn-full" onclick="socialLogin('Google')">🔍 Google</button>
+        <button class="btn btn-outline btn-full" onclick="socialLogin('Facebook')">📘 Facebook</button>
+      </div>
+
+      <div class="login-footer">
+        Don't have an account? <a href="register.html">Create one free</a>
+      </div>
+      <div class="login-footer" style="margin-top:0.5rem;">
+        <small>By signing in, you agree to our
+          <a href="legal/terms.html">Terms</a> &amp;
+          <a href="legal/privacy.html">Privacy Policy</a></small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // Demo: any email/password logs in
+  document.getElementById('login-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const pass  = document.getElementById('password').value;
+    const errEl = document.getElementById('login-error');
+    const btn   = document.getElementById('login-btn');
+
+    if (!email || !pass) {
+      errEl.textContent = 'Please enter your email and password.';
+      errEl.style.display = 'block'; return;
+    }
+    if (!email.includes('@')) {
+      errEl.textContent = 'Please enter a valid email address.';
+      errEl.style.display = 'block'; return;
+    }
+    errEl.style.display = 'none';
+    btn.textContent = 'Signing in…';
+    btn.disabled = true;
+    setTimeout(() => {
+      localStorage.setItem('greenleaf_user', JSON.stringify({ email, name: email.split('@')[0] }));
+      window.location.href = 'home.html';
+    }, 900);
+  });
+
+  function socialLogin(provider) {
+    localStorage.setItem('greenleaf_user', JSON.stringify({ email: `user@${provider.toLowerCase()}.com`, name: 'Guest User' }));
+    window.location.href = 'home.html';
+  }
+
+  // Redirect if already logged in
+  if (localStorage.getItem('greenleaf_user')) {
+    window.location.href = 'home.html';
+  }
+</script>
+</body>
+</html>

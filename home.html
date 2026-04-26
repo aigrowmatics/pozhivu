@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GreenLeaf — Natural &amp; Organic Products</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="home.html" class="logo"><span class="logo-icon">🌿</span>GreenLeaf</a>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span id="user-greeting" style="font-size:0.85rem; color:var(--green-700); font-weight:600;"></span>
+      <a href="cart.html" class="cart-btn">
+        🛒 Cart
+        <span class="cart-badge" id="cart-count" style="display:none">0</span>
+      </a>
+      <button onclick="logout()" style="background:none;border:none;cursor:pointer;font-size:0.82rem;color:var(--gray-400);">Sign out</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+    <div class="hero-content">
+      <div class="hero-eyebrow">🌿 100% Certified Organic</div>
+      <h1>Pure Nature,<br>Delivered Fresh</h1>
+      <p>Handpicked organic products that nourish your body and honour the earth. From skincare to wellness — live greener every day.</p>
+      <div class="hero-actions">
+        <a href="#products" class="btn btn-primary btn-lg">Shop Now</a>
+        <a href="#about" class="btn btn-outline btn-lg">Our Story</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="hero-blob">🌿</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES STRIP -->
+<div class="features-strip">
+  <div class="container">
+    <div class="feature-item">
+      <span class="icon">🚚</span>
+      <div class="text"><strong>Free Shipping</strong><span>On orders above ₹999</span></div>
+    </div>
+    <div class="feature-item">
+      <span class="icon">🌱</span>
+      <div class="text"><strong>100% Organic</strong><span>Certified &amp; natural</span></div>
+    </div>
+    <div class="feature-item">
+      <span class="icon">🔒</span>
+      <div class="text"><strong>Secure Payment</strong><span>256-bit SSL encryption</span></div>
+    </div>
+    <div class="feature-item">
+      <span class="icon">🔄</span>
+      <div class="text"><strong>Easy Returns</strong><span>30-day hassle-free</span></div>
+    </div>
+    <div class="feature-item">
+      <span class="icon">💬</span>
+      <div class="text"><strong>24/7 Support</strong><span>We're here to help</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Browse by Category</span>
+      <h2>What are you looking for?</h2>
+    </div>
+    <div class="grid-4">
+      <a href="products/product-1.html" class="card" style="text-align:center; cursor:pointer; text-decoration:none;">
+        <div class="card-body">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">✨</div>
+          <h4 style="font-family:'DM Sans',sans-serif; color:var(--green-800);">Skincare</h4>
+        </div>
+      </a>
+      <a href="products/product-2.html" class="card" style="text-align:center; cursor:pointer; text-decoration:none;">
+        <div class="card-body">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">🧴</div>
+          <h4 style="font-family:'DM Sans',sans-serif; color:var(--green-800);">Lifestyle</h4>
+        </div>
+      </a>
+      <a href="products/product-3.html" class="card" style="text-align:center; cursor:pointer; text-decoration:none;">
+        <div class="card-body">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">🌸</div>
+          <h4 style="font-family:'DM Sans',sans-serif; color:var(--green-800);">Wellness</h4>
+        </div>
+      </a>
+      <a href="products/product-4.html" class="card" style="text-align:center; cursor:pointer; text-decoration:none;">
+        <div class="card-body">
+          <div style="font-size:3rem; margin-bottom:0.75rem;">🍵</div>
+          <h4 style="font-family:'DM Sans',sans-serif; color:var(--green-800);">Nutrition</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products" style="background: linear-gradient(180deg, var(--white) 0%, var(--green-50) 100%);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Featured Collection</span>
+      <h2>Our Best Sellers</h2>
+      <p>Explore our curated range of organic, sustainable, and eco-friendly products.</p>
+    </div>
+    <div class="grid-3">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">✨</div>
+          <span class="product-badge">Bestseller</span>
+          <button class="wishlist-btn" data-wishlist="p1" data-name="Organic Glow Serum" data-price="1299" data-emoji="✨">🤍</button>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Skincare</div>
+          <div class="stars">★★★★★ <span style="color:var(--gray-400); font-size:0.78rem;">(128)</span></div>
+          <div class="product-name">Organic Glow Serum</div>
+          <div class="product-desc-short">Vitamin C + Hyaluronic Acid — Brightens &amp; hydrates naturally</div>
+          <div class="product-footer">
+            <div class="product-price">₹1,299 <span class="original">₹1,799</span></div>
+            <button class="btn btn-primary btn-sm" data-add-cart data-id="p1" data-name="Organic Glow Serum" data-price="1299" data-emoji="✨" data-category="Skincare">🛒 Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">🍶</div>
+          <span class="product-badge">Eco-Pick</span>
+          <button class="wishlist-btn" data-wishlist="p2" data-name="Bamboo Water Bottle" data-price="799" data-emoji="🍶">🤍</button>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Lifestyle</div>
+          <div class="stars">★★★★☆ <span style="color:var(--gray-400); font-size:0.78rem;">(86)</span></div>
+          <div class="product-name">Bamboo Water Bottle</div>
+          <div class="product-desc-short">BPA-free, insulated, 24h cold &amp; 12h hot — 750ml</div>
+          <div class="product-footer">
+            <div class="product-price">₹799 <span class="original">₹1,099</span></div>
+            <button class="btn btn-primary btn-sm" data-add-cart data-id="p2" data-name="Bamboo Water Bottle" data-price="799" data-emoji="🍶" data-category="Lifestyle">🛒 Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">🌸</div>
+          <button class="wishlist-btn" data-wishlist="p3" data-name="Forest Essential Oil Blend" data-price="649" data-emoji="🌸">🤍</button>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Wellness</div>
+          <div class="stars">★★★★★ <span style="color:var(--gray-400); font-size:0.78rem;">(210)</span></div>
+          <div class="product-name">Forest Essential Oil Blend</div>
+          <div class="product-desc-short">Eucalyptus + Cedarwood + Pine — Pure aromatherapy</div>
+          <div class="product-footer">
+            <div class="product-price">₹649</div>
+            <button class="btn btn-primary btn-sm" data-add-cart data-id="p3" data-name="Forest Essential Oil Blend" data-price="649" data-emoji="🌸" data-category="Wellness">🛒 Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">🌿</div>
+          <span class="product-badge">New</span>
+          <button class="wishlist-btn" data-wishlist="p4" data-name="Green Clay Face Mask" data-price="549" data-emoji="🌿">🤍</button>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Skincare</div>
+          <div class="stars">★★★★☆ <span style="color:var(--gray-400); font-size:0.78rem;">(54)</span></div>
+          <div class="product-name">Green Clay Face Mask</div>
+          <div class="product-desc-short">Deep pore cleansing with Kaolin &amp; Aloe Vera — 100g</div>
+          <div class="product-footer">
+            <div class="product-price">₹549 <span class="original">₹699</span></div>
+            <button class="btn btn-primary btn-sm" data-add-cart data-id="p4" data-name="Green Clay Face Mask" data-price="549" data-emoji="🌿" data-category="Skincare">🛒 Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">🍵</div>
+          <span class="product-badge">Limited</span>
+          <button class="wishlist-btn" data-wishlist="p5" data-name="Herbal Tea Collection" data-price="899" data-emoji="🍵">🤍</button>
+        </div>
+        <div class="product-info">
+          <div class="product-category">Nutrition</div>
+          <div class="stars">★★★★★ <span style="color:var(--gray-400); font-size:0.78rem;">(302)</span></div>
+          <div class="product-name">Herbal Tea Collection</div>
+          <div class="product-desc-short">8 premium blends — Tulsi, Chamomile, Ginger &amp; more — 40 bags</div>
+          <div class="product-footer">
+            <div class="product-price">₹899 <span class="original">₹1,199</span></div>
+            <button class="btn btn-primary btn-sm" data-add-cart data-id="p5" data-name="Herbal Tea Collection" data-price="899" data-emoji="🍵" data-category="Nutrition">🛒 Add</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- View All Card -->
+      <div class="product-card" style="display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--green-50), var(--green-100));">
+        <div style="text-align:center; padding:2rem;">
+          <div style="font-size:3rem; margin-bottom:1rem;">🌿</div>
+          <h3 style="color:var(--green-800); margin-bottom:0.75rem;">See All Products</h3>
+          <p style="font-size:0.88rem; margin-bottom:1.5rem;">Discover our full range of organic &amp; natural products</p>
+          <a href="products/product-1.html" class="btn btn-primary">Browse All</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="grid-2" style="align-items:center;">
+      <div>
+        <span class="eyebrow" style="display:inline-block; color:var(--green-700); font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:1rem;">Our Story</span>
+        <h2 style="color:var(--green-900); margin-bottom:1.25rem;">We believe nature knows best.</h2>
+        <p style="margin-bottom:1rem;">Founded in 2019, GreenLeaf started with a simple belief: that what you put on and in your body matters — and so does what you leave behind on the planet.</p>
+        <p style="margin-bottom:1rem;">Every product we sell is carefully sourced, certified organic, and packaged in recyclable or compostable materials. We partner directly with Indian farmers and artisans to ensure fair trade and traceability.</p>
+        <p style="margin-bottom:2rem;">🌍 For every order placed, we plant a tree through our #GreenEarth initiative.</p>
+        <div style="display:flex; gap:2rem; flex-wrap:wrap;">
+          <div>
+            <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-800);">50K+</div>
+            <div style="font-size:0.85rem; color:var(--gray-400);">Happy Customers</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-800);">120+</div>
+            <div style="font-size:0.85rem; color:var(--gray-400);">Products</div>
+          </div>
+          <div>
+            <div style="font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--green-800);">40K</div>
+            <div style="font-size:0.85rem; color:var(--gray-400);">Trees Planted</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:center;">
+        <div style="width:360px; height:360px; border-radius:40% 60% 50% 50% / 50% 40% 60% 50%; background:linear-gradient(135deg,var(--green-300),var(--green-500)); display:flex; align-items:center; justify-content:center; font-size:9rem;">🌿</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:var(--green-50);">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Reviews</span>
+      <h2>Loved by thousands</h2>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="card-body">
+        <div style="color:var(--accent); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+        <p style="font-size:0.92rem; margin-bottom:1rem;">"The Glow Serum is absolutely magical. My skin has never looked better and I love that it's completely natural. Will never go back!"</p>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <div style="width:38px; height:38px; border-radius:50%; background:var(--green-200,#d1f0db); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">👩</div>
+          <div><strong style="font-size:0.88rem;">Priya Mehta</strong><br><span style="font-size:0.78rem; color:var(--gray-400);">Bangalore</span></div>
+        </div>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div style="color:var(--accent); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+        <p style="font-size:0.92rem; margin-bottom:1rem;">"The herbal tea collection is a game changer for my morning routine. The Tulsi blend is now my daily ritual. Highly recommend."</p>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <div style="width:38px; height:38px; border-radius:50%; background:var(--green-200,#d1f0db); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">👨</div>
+          <div><strong style="font-size:0.88rem;">Rohan Gupta</strong><br><span style="font-size:0.78rem; color:var(--gray-400);">Mumbai</span></div>
+        </div>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <div style="color:var(--accent); font-size:1.1rem; margin-bottom:0.75rem;">★★★★★</div>
+        <p style="font-size:0.92rem; margin-bottom:1rem;">"Fast shipping, beautiful packaging, and the bamboo bottle is everything. The quality exceeded my expectations completely."</p>
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <div style="width:38px; height:38px; border-radius:50%; background:var(--green-200,#d1f0db); display:flex; align-items:center; justify-content:center; font-size:1.2rem;">👩</div>
+          <div><strong style="font-size:0.88rem;">Ananya Pillai</strong><br><span style="font-size:0.78rem; color:var(--gray-400);">Chennai</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section--sm" style="background: var(--green-800);">
+  <div class="container" style="text-align:center;">
+    <h2 style="color:white; margin-bottom:0.75rem;">Join the GreenLeaf family 🌿</h2>
+    <p style="color:rgba(255,255,255,0.75); margin-bottom:2rem;">Get exclusive deals, wellness tips, and ₹200 off your first order.</p>
+    <form id="newsletter-form" style="display:flex; gap:0.75rem; max-width:480px; margin:0 auto;" onsubmit="subscribeNewsletter(event)">
+      <input type="email" placeholder="Enter your email" style="flex:1; padding:0.85rem 1.25rem; border-radius:50px; border:none; font-family:'DM Sans',sans-serif; font-size:0.95rem;" required />
+      <button type="submit" class="btn btn-accent">Subscribe</button>
+    </form>
+    <p style="color:rgba(255,255,255,0.45); font-size:0.78rem; margin-top:1rem;">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>We'd love to hear from you</h2>
+      <p>Have a question, feedback, or want to partner with us? Drop us a message.</p>
+    </div>
+    <div class="grid-2" style="max-width:900px; margin:0 auto;">
+      <div>
+        <form id="contact-form" onsubmit="submitContact(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Name</label><input type="text" placeholder="Your full name" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="you@example.com" required /></div>
+          </div>
+          <div class="form-group"><label>Subject</label><input type="text" placeholder="How can we help?" /></div>
+          <div class="form-group"><label>Message</label><textarea placeholder="Tell us more…"></textarea></div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:1.5rem; justify-content:center;">
+        <div class="card"><div class="card-body" style="display:flex; align-items:center; gap:1rem;">
+          <span style="font-size:2rem;">📧</span>
+          <div><strong>Email</strong><br><a href="mailto:hello@greenleaf.store" style="color:var(--green-700); font-size:0.9rem;">hello@greenleaf.store</a></div>
+        </div></div>
+        <div class="card"><div class="card-body" style="display:flex; align-items:center; gap:1rem;">
+          <span style="font-size:2rem;">📞</span>
+          <div><strong>Phone</strong><br><a href="tel:+918001234567" style="color:var(--green-700); font-size:0.9rem;">+91 800 123 4567</a></div>
+        </div></div>
+        <div class="card"><div class="card-body" style="display:flex; align-items:center; gap:1rem;">
+          <span style="font-size:2rem;">📍</span>
+          <div><strong>Address</strong><br><span style="font-size:0.88rem; color:var(--gray-600);">GreenLeaf HQ, Indiranagar, Bengaluru — 560038</span></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color:white;"><span class="logo-icon">🌿</span>GreenLeaf</div>
+        <p>Nature's finest organic products, ethically sourced and sustainably packaged. Live green, live well.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="products/product-1.html">Skincare</a></li>
+          <li><a href="products/product-2.html">Lifestyle</a></li>
+          <li><a href="products/product-3.html">Wellness</a></li>
+          <li><a href="products/product-4.html">Skincare</a></li>
+          <li><a href="products/product-5.html">Nutrition</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="cart.html">My Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="legal/shipping.html">Shipping Info</a></li>
+          <li><a href="legal/returns.html">Returns</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="legal/privacy.html">Privacy Policy</a></li>
+          <li><a href="legal/terms.html">Terms of Service</a></li>
+          <li><a href="legal/returns.html">Return Policy</a></li>
+          <li><a href="legal/shipping.html">Shipping Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 GreenLeaf Store. All rights reserved.</p>
+      <div class="footer-payments">
+        <span class="payment-chip">Razorpay</span>
+        <span class="payment-chip">UPI</span>
+        <span class="payment-chip">Visa</span>
+        <span class="payment-chip">Mastercard</span>
+        <span class="payment-chip">NetBanking</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Show user greeting
+  const user = JSON.parse(localStorage.getItem('greenleaf_user') || 'null');
+  if (!user) window.location.href = 'index.html';
+  else {
+    const el = document.getElementById('user-greeting');
+    if (el) el.textContent = 'Hi, ' + user.name.split(' ')[0] + ' 👋';
+  }
+  function logout() {
+    localStorage.removeItem('greenleaf_user');
+    window.location.href = 'index.html';
+  }
+  function subscribeNewsletter(e) {
+    e.preventDefault();
+    showToast('🎉 You\'re subscribed! Check your inbox for ₹200 off.');
+    e.target.reset();
+  }
+  function submitContact(e) {
+    e.preventDefault();
+    showToast('✅ Message sent! We\'ll get back to you within 24 hours.');
+    e.target.reset();
+  }
+</script>
+</body>
+</html>

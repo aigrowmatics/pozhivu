@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — GreenLeaf Store</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar"><div class="navbar-inner">
+  <a href="home.html" class="logo"><span class="logo-icon">🌿</span>GreenLeaf</a>
+  <div style="font-size:0.85rem; color:var(--gray-400);">🔒 Secure Checkout</div>
+</div></nav>
+
+<div class="section--sm">
+  <div class="container">
+    <!-- STEPS -->
+    <div class="checkout-steps">
+      <div class="step done"><div class="step-num">✓</div><span class="step-label">Cart</span></div>
+      <div class="step-line done"></div>
+      <div class="step active"><div class="step-num">2</div><span class="step-label">Shipping</span></div>
+      <div class="step-line"></div>
+      <div class="step"><div class="step-num">3</div><span class="step-label">Payment</span></div>
+      <div class="step-line"></div>
+      <div class="step"><div class="step-num">4</div><span class="step-label">Confirm</span></div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 380px; gap:2.5rem; align-items:start;">
+
+      <!-- LEFT: FORM PANELS -->
+      <div>
+
+        <!-- STEP 1: CONTACT -->
+        <div class="card" style="margin-bottom:1.5rem;" id="section-contact">
+          <div class="card-body">
+            <h3 style="color:var(--green-900); margin-bottom:1.25rem;">📋 Contact Information</h3>
+            <div class="form-row">
+              <div class="form-group"><label>First Name *</label><input type="text" id="fname" placeholder="Aarav" /></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" id="lname" placeholder="Sharma" /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Email Address *</label><input type="email" id="email" placeholder="you@example.com" /></div>
+              <div class="form-group"><label>Phone Number *</label><input type="tel" id="phone" placeholder="+91 98765 43210" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: SHIPPING ADDRESS -->
+        <div class="card" style="margin-bottom:1.5rem;" id="section-address">
+          <div class="card-body">
+            <h3 style="color:var(--green-900); margin-bottom:1.25rem;">📍 Shipping Address</h3>
+            <div class="form-group"><label>Address Line 1 *</label><input type="text" id="addr1" placeholder="Flat / House No., Building, Street" /></div>
+            <div class="form-group"><label>Address Line 2</label><input type="text" id="addr2" placeholder="Landmark / Area (optional)" /></div>
+            <div class="form-row">
+              <div class="form-group"><label>City *</label><input type="text" id="city" placeholder="Bengaluru" /></div>
+              <div class="form-group"><label>State *</label>
+                <select id="state">
+                  <option value="">Select State</option>
+                  <option>Andhra Pradesh</option><option>Karnataka</option>
+                  <option>Maharashtra</option><option>Tamil Nadu</option>
+                  <option>Delhi</option><option>Gujarat</option>
+                  <option>Rajasthan</option><option>West Bengal</option>
+                  <option>Uttar Pradesh</option><option>Telangana</option>
+                  <option>Kerala</option><option>Punjab</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>PIN Code *</label><input type="text" id="pin" placeholder="560001" maxlength="6" /></div>
+              <div class="form-group"><label>Country</label><input type="text" value="India" readonly style="background:var(--gray-100);" /></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: SHIPPING METHOD -->
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-body">
+            <h3 style="color:var(--green-900); margin-bottom:1.25rem;">🚚 Shipping Method</h3>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+
+              <label class="payment-option selected" id="ship-standard" onclick="selectShipping(this,'standard',0)">
+                <input type="radio" name="shipping" value="standard" checked />
+                <div>
+                  <div class="p-label">Standard Delivery — FREE</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">5–7 business days · via Delhivery / DTDC</div>
+                </div>
+                <div class="p-icons">
+                  <span style="font-size:1.2rem;">📦</span>
+                </div>
+              </label>
+
+              <label class="payment-option" id="ship-express" onclick="selectShipping(this,'express',99)">
+                <input type="radio" name="shipping" value="express" />
+                <div>
+                  <div class="p-label">Express Delivery — ₹99</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">2–3 business days · via BlueDart</div>
+                </div>
+                <div class="p-icons">
+                  <span style="font-size:1.2rem;">⚡</span>
+                </div>
+              </label>
+
+              <label class="payment-option" id="ship-same" onclick="selectShipping(this,'same',199)">
+                <input type="radio" name="shipping" value="same" />
+                <div>
+                  <div class="p-label">Same-Day Delivery — ₹199 <span class="badge badge-green" style="font-size:0.7rem;">Bengaluru Only</span></div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">Order before 12 PM · via Dunzo / Swiggy Genie</div>
+                </div>
+                <div class="p-icons">
+                  <span style="font-size:1.2rem;">🏃</span>
+                </div>
+              </label>
+            </div>
+
+            <!-- Shipping Partners Info -->
+            <div style="margin-top:1.5rem; padding:1rem; background:var(--green-50); border-radius:var(--radius); border:1px solid var(--green-100);">
+              <p style="font-size:0.82rem; font-weight:700; color:var(--green-800); margin-bottom:0.75rem;">📮 Our Shipping Partners</p>
+              <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                <span class="badge badge-green">🚚 Delhivery</span>
+                <span class="badge badge-green">📦 DTDC</span>
+                <span class="badge badge-green">⚡ BlueDart</span>
+                <span class="badge badge-green">🏃 Dunzo</span>
+                <span class="badge badge-green">🛵 Swiggy Genie</span>
+                <span class="badge badge-green">📮 India Post (remote)</span>
+                <span class="badge badge-green">🌍 Ecom Express</span>
+              </div>
+              <p style="font-size:0.78rem; color:var(--gray-400); margin-top:0.75rem;">Tracking link sent via SMS &amp; email after dispatch. Estimated delivery times exclude Sundays &amp; public holidays.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4: PAYMENT -->
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-body">
+            <h3 style="color:var(--green-900); margin-bottom:1.25rem;">💳 Payment Method</h3>
+
+            <div class="payment-methods">
+              <label class="payment-option selected" onclick="selectPayment(this,'upi')">
+                <input type="radio" name="payment" value="upi" checked />
+                <div>
+                  <div class="p-label">UPI / QR Code</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">Google Pay, PhonePe, Paytm, BHIM</div>
+                </div>
+                <div class="p-icons"><span style="font-size:1.3rem;">📱</span></div>
+              </label>
+
+              <label class="payment-option" onclick="selectPayment(this,'razorpay')">
+                <input type="radio" name="payment" value="razorpay" />
+                <div>
+                  <div class="p-label">Razorpay</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">Credit / Debit Card, NetBanking, Wallet</div>
+                </div>
+                <div class="p-icons"><span style="font-size:1.3rem;">💳</span></div>
+              </label>
+
+              <label class="payment-option" onclick="selectPayment(this,'card')">
+                <input type="radio" name="payment" value="card" />
+                <div>
+                  <div class="p-label">Credit / Debit Card</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">Visa, Mastercard, RuPay, Amex</div>
+                </div>
+                <div class="p-icons"><span style="font-size:1.3rem;">🏦</span></div>
+              </label>
+
+              <label class="payment-option" onclick="selectPayment(this,'netbanking')">
+                <input type="radio" name="payment" value="netbanking" />
+                <div>
+                  <div class="p-label">Net Banking</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">All major Indian banks supported</div>
+                </div>
+                <div class="p-icons"><span style="font-size:1.3rem;">🏛</span></div>
+              </label>
+
+              <label class="payment-option" onclick="selectPayment(this,'cod')">
+                <input type="radio" name="payment" value="cod" />
+                <div>
+                  <div class="p-label">Cash on Delivery</div>
+                  <div style="font-size:0.8rem; color:var(--gray-400);">Available on orders below ₹5,000 — ₹49 handling fee</div>
+                </div>
+                <div class="p-icons"><span style="font-size:1.3rem;">💵</span></div>
+              </label>
+            </div>
+
+            <!-- Card Details (shown when card selected) -->
+            <div id="card-fields" style="display:none; margin-top:1rem; padding:1rem; background:var(--gray-50); border-radius:var(--radius);">
+              <div class="form-group"><label>Card Number</label><input type="text" placeholder="1234 5678 9012 3456" maxlength="19" /></div>
+              <div class="form-row">
+                <div class="form-group"><label>Expiry</label><input type="text" placeholder="MM / YY" maxlength="7" /></div>
+                <div class="form-group"><label>CVV</label><input type="password" placeholder="•••" maxlength="4" /></div>
+              </div>
+              <div class="form-group"><label>Cardholder Name</label><input type="text" placeholder="Name on card" /></div>
+            </div>
+
+            <!-- UPI field -->
+            <div id="upi-field" style="margin-top:1rem; padding:1rem; background:var(--gray-50); border-radius:var(--radius);">
+              <div class="form-group" style="margin-bottom:0;">
+                <label>UPI ID</label>
+                <input type="text" placeholder="yourname@upi" />
+              </div>
+            </div>
+
+            <div style="margin-top:1rem; display:flex; align-items:center; gap:0.6rem; font-size:0.82rem; color:var(--gray-400);">
+              🔒 All payments are secured with 256-bit SSL encryption via Razorpay Payment Gateway
+            </div>
+          </div>
+        </div>
+
+        <div id="place-order-error" style="display:none; background:#FEE2E2; color:#991B1B; padding:0.75rem 1rem; border-radius:8px; font-size:0.85rem; margin-bottom:1rem;"></div>
+        <button class="btn btn-primary btn-full btn-lg" onclick="placeOrder()" id="place-btn">
+          🔒 Place Order Securely
+        </button>
+        <p style="text-align:center; font-size:0.8rem; color:var(--gray-400); margin-top:0.75rem;">
+          By placing this order you agree to our <a href="legal/terms.html" style="color:var(--green-700);">Terms</a> &amp; <a href="legal/privacy.html" style="color:var(--green-700);">Privacy Policy</a>
+        </p>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="checkout-items" style="margin-bottom:1rem; max-height:280px; overflow-y:auto;"></div>
+        <div class="summary-line"><span>Subtotal</span><span id="co-subtotal">₹0</span></div>
+        <div class="summary-line"><span>Shipping</span><span id="co-shipping">FREE</span></div>
+        <div class="summary-line"><span>GST (18%)</span><span id="co-gst">₹0</span></div>
+        <div class="summary-line total"><span>Total</span><span id="co-total">₹0</span></div>
+        <div style="margin-top:1.25rem; padding:0.75rem; background:var(--green-50); border-radius:8px; font-size:0.82rem; color:var(--green-800); text-align:center;">
+          🌳 Your order will plant 1 tree via #GreenEarth
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER SUCCESS MODAL -->
+<div id="success-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); z-index:500; display:none; align-items:center; justify-content:center;">
+  <div style="background:white; border-radius:24px; padding:3rem; text-align:center; max-width:460px; width:90%; box-shadow:0 20px 60px rgba(0,0,0,0.25);">
+    <div style="font-size:4rem; margin-bottom:1rem;">🎉</div>
+    <h2 style="color:var(--green-900); margin-bottom:0.75rem;">Order Placed!</h2>
+    <p style="margin-bottom:0.5rem;">Thank you for shopping with GreenLeaf! Your order has been confirmed.</p>
+    <p style="font-size:0.85rem; color:var(--gray-400); margin-bottom:2rem;">Order ID: <strong id="order-id"></strong> · You'll receive a confirmation email shortly.</p>
+    <div style="background:var(--green-50); border-radius:12px; padding:1rem; margin-bottom:1.5rem; font-size:0.88rem; color:var(--green-800);">
+      🚚 Expected delivery: <strong id="delivery-estimate"></strong>
+    </div>
+    <a href="home.html" class="btn btn-primary btn-full">Continue Shopping 🌿</a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+let shippingCost = 0;
+
+function selectPayment(el, method) {
+  document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('card-fields').style.display = method === 'card' ? 'block' : 'none';
+  document.getElementById('upi-field').style.display = method === 'upi' ? 'block' : 'none';
+}
+function selectShipping(el, method, cost) {
+  document.querySelectorAll('[id^="ship-"]').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  shippingCost = cost;
+  renderSummary();
+}
+function renderSummary() {
+  const cart = CartManager.getCart();
+  const subtotal = CartManager.getTotal();
+  const finalShipping = subtotal >= 999 && shippingCost === 0 ? 0 : shippingCost;
+  const gst = Math.round(subtotal * 0.18);
+  const total = subtotal + finalShipping + gst;
+
+  document.getElementById('co-subtotal').textContent = '₹' + subtotal.toLocaleString();
+  document.getElementById('co-shipping').textContent = finalShipping === 0 ? 'FREE' : '₹' + finalShipping;
+  document.getElementById('co-gst').textContent = '₹' + gst.toLocaleString();
+  document.getElementById('co-total').textContent = '₹' + total.toLocaleString();
+
+  const container = document.getElementById('checkout-items');
+  container.innerHTML = cart.map(item => `
+    <div style="display:flex; align-items:center; gap:0.75rem; padding:0.6rem 0; border-bottom:1px solid var(--gray-100);">
+      <div style="width:44px; height:44px; border-radius:8px; background:var(--green-50); display:flex; align-items:center; justify-content:center; font-size:1.5rem; flex-shrink:0;">${item.emoji || '🌿'}</div>
+      <div style="flex:1; min-width:0;">
+        <div style="font-size:0.85rem; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${item.name}</div>
+        <div style="font-size:0.78rem; color:var(--gray-400);">Qty: ${item.qty}</div>
+      </div>
+      <div style="font-size:0.88rem; font-weight:600; flex-shrink:0;">₹${(item.price * item.qty).toLocaleString()}</div>
+    </div>
+  `).join('');
+}
+
+function placeOrder() {
+  const required = ['fname','lname','email','phone','addr1','city','state','pin'];
+  const labels   = ['First name','Last name','Email','Phone','Address','City','State','PIN code'];
+  const errEl = document.getElementById('place-order-error');
+  for (let i = 0; i < required.length; i++) {
+    const el = document.getElementById(required[i]);
+    if (!el.value.trim()) {
+      errEl.textContent = '⚠️ Please fill in: ' + labels[i];
+      errEl.style.display = 'block';
+      el.focus(); el.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+  }
+  if (CartManager.getCart().length === 0) {
+    errEl.textContent = '⚠️ Your cart is empty!'; errEl.style.display = 'block'; return;
+  }
+  errEl.style.display = 'none';
+
+  const btn = document.getElementById('place-btn');
+  btn.textContent = '⏳ Processing…'; btn.disabled = true;
+
+  setTimeout(() => {
+    const orderId = 'GL' + Date.now().toString().slice(-8);
+    const days = shippingCost === 199 ? 'Today by 8 PM' : shippingCost === 99 ? '2–3 Business Days' : '5–7 Business Days';
+    document.getElementById('order-id').textContent = orderId;
+    document.getElementById('delivery-estimate').textContent = days;
+    CartManager.clearCart();
+    const overlay = document.getElementById('success-overlay');
+    overlay.style.display = 'flex';
+  }, 1800);
+}
+
+renderSummary();
+</script>
+</body>
+</html>
