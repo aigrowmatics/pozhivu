@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GreenLeaf — Natural &amp; Organic Products</title>
+  <title>POZHIVU — Natural &amp; SOAP</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -11,7 +11,7 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <div class="navbar-inner">
-    <a href="home.html" class="logo"><span class="logo-icon">🌿</span>GreenLeaf</a>
+    <a href="home.html" class="logo"><div class="logo-icon"><img src="brandimages/pozhivu_logo.jpeg" alt="pozhivu logo"></div>POZHIVU</a>
     <ul class="nav-links">
       <li><a href="home.html">Home</a></li>
       <li><a href="#products">Products</a></li>
@@ -297,7 +297,7 @@
 <!-- NEWSLETTER -->
 <section class="section--sm" style="background: var(--green-800);">
   <div class="container" style="text-align:center;">
-    <h2 style="color:white; margin-bottom:0.75rem;">Join the GreenLeaf family 🌿</h2>
+    <h2 style="color:white; margin-bottom:0.75rem;">Join the POZHIVU family 🌿</h2>
     <p style="color:rgba(255,255,255,0.75); margin-bottom:2rem;">Get exclusive deals, wellness tips, and ₹200 off your first order.</p>
     <form id="newsletter-form" style="display:flex; gap:0.75rem; max-width:480px; margin:0 auto;" onsubmit="subscribeNewsletter(event)">
       <input type="email" placeholder="Enter your email" style="flex:1; padding:0.85rem 1.25rem; border-radius:50px; border:none; font-family:'DM Sans',sans-serif; font-size:0.95rem;" required />
@@ -330,7 +330,7 @@
       <div style="display:flex; flex-direction:column; gap:1.5rem; justify-content:center;">
         <div class="card"><div class="card-body" style="display:flex; align-items:center; gap:1rem;">
           <span style="font-size:2rem;">📧</span>
-          <div><strong>Email</strong><br><a href="mailto:hello@greenleaf.store" style="color:var(--green-700); font-size:0.9rem;">hello@greenleaf.store</a></div>
+          <div><strong>Email</strong><br><a href="mailto:hello@pozhivustore" style="color:var(--green-700); font-size:0.9rem;">hello@pozhivustore.com</a></div>
         </div></div>
         <div class="card"><div class="card-body" style="display:flex; align-items:center; gap:1rem;">
           <span style="font-size:2rem;">📞</span>
@@ -338,7 +338,7 @@
         </div></div>
         <div class="card"><div class="card-body" style="display:flex; align-items:center; gap:1rem;">
           <span style="font-size:2rem;">📍</span>
-          <div><strong>Address</strong><br><span style="font-size:0.88rem; color:var(--gray-600);">GreenLeaf HQ, Indiranagar, Bengaluru — 560038</span></div>
+          <div><strong>Address</strong><br><span style="font-size:0.88rem; color:var(--gray-600);">POZHIVU, Saibaba colony, Coimbatore</span></div>
         </div></div>
       </div>
     </div>
@@ -350,7 +350,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo" style="color:white;"><span class="logo-icon">🌿</span>GreenLeaf</div>
+        <div class="logo" style="color:white;"><span class="logo-icon">🌿</span>POZHIVU</div>
         <p>Nature's finest organic products, ethically sourced and sustainably packaged. Live green, live well.</p>
       </div>
       <div class="footer-col">
@@ -384,7 +384,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 GreenLeaf Store. All rights reserved.</p>
+      <p>© 2025 POZHIVU Store. All rights reserved.</p>
       <div class="footer-payments">
         <span class="payment-chip">Razorpay</span>
         <span class="payment-chip">UPI</span>
@@ -399,14 +399,14 @@
 <script src="js/main.js"></script>
 <script>
   // Show user greeting
-  const user = JSON.parse(localStorage.getItem('greenleaf_user') || 'null');
+  const user = JSON.parse(localStorage.getItem('pozhivu_user') || 'null');
   if (!user) window.location.href = 'index.html';
   else {
     const el = document.getElementById('user-greeting');
     if (el) el.textContent = 'Hi, ' + user.name.split(' ')[0] + ' 👋';
   }
   function logout() {
-    localStorage.removeItem('greenleaf_user');
+    localStorage.removeItem('pozhivu_user');
     window.location.href = 'index.html';
   }
   function subscribeNewsletter(e) {

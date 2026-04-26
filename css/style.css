@@ -82,6 +82,12 @@ a  { text-decoration: none; color: inherit; }
   color: var(--green-800);
 }
 .logo-icon { font-size: 1.8rem; }
+.logo-icon img {
+  display: block;
+  max-height: 1.8rem;
+  width: auto;
+  border-radius: 6px;
+}
 .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .nav-links a {
   font-size: 0.9rem; font-weight: 500;
