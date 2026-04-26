@@ -71,7 +71,7 @@
     if (pass !== conf) { err.textContent='Passwords do not match.'; err.style.display='block'; return; }
     if (pass.length < 8) { err.textContent='Password must be at least 8 characters.'; err.style.display='block'; return; }
     err.style.display='none';
-    localStorage.setItem('greenleaf_user', JSON.stringify({ email, name: fname+' '+lname }));
+    localStorage.setItem('pozhivu_user', JSON.stringify({ email, name: fname+' '+lname }));
     window.location.href = 'home.html';
   });
 </script>

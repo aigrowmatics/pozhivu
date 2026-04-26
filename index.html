@@ -91,18 +91,18 @@
     btn.textContent = 'Signing in…';
     btn.disabled = true;
     setTimeout(() => {
-      localStorage.setItem('greenleaf_user', JSON.stringify({ email, name: email.split('@')[0] }));
+      localStorage.setItem('pozhivu_user', JSON.stringify({ email, name: email.split('@')[0] }));
       window.location.href = 'home.html';
     }, 900);
   });
 
   function socialLogin(provider) {
-    localStorage.setItem('greenleaf_user', JSON.stringify({ email: `user@${provider.toLowerCase()}.com`, name: 'Guest User' }));
+    localStorage.setItem('pozhivu_user', JSON.stringify({ email: `user@${provider.toLowerCase()}.com`, name: 'Guest User' }));
     window.location.href = 'home.html';
   }
 
   // Redirect if already logged in
-  if (localStorage.getItem('greenleaf_user')) {
+  if (localStorage.getItem('pozhivu_user')) {
     window.location.href = 'home.html';
   }
 </script>

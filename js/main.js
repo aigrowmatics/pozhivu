@@ -183,7 +183,7 @@ function initMobileMenu() {
 
 // ===== AUTH GUARD =====
 function requireAuth(redirectTo) {
-  const user = localStorage.getItem('greenleaf_user');
+  const user = localStorage.getItem('pozhivu_user');
   if (!user) {
     window.location.href = redirectTo || '../index.html';
     return false;
