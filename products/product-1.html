@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Glow Serum — GreenLeaf Store</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="../home.html" class="logo"><span class="logo-icon">🌿</span>GreenLeaf</a>
+    <ul class="nav-links">
+      <li><a href="../home.html">Home</a></li>
+      <li><a href="../home.html#products">Products</a></li>
+      <li><a href="../home.html#about">About</a></li>
+      <li><a href="../home.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="../cart.html" class="cart-btn">🛒 Cart<span class="cart-badge" id="cart-count" style="display:none">0</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="section--sm">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../home.html">Home</a><span>/</span>
+      <a href="../home.html#products">Skincare</a><span>/</span>
+      <span>Organic Glow Serum</span>
+    </div>
+
+    <div class="grid-2" style="align-items:start; gap:3.5rem;">
+      <!-- GALLERY -->
+      <div class="product-gallery">
+        <div class="main-image" id="main-img">✨</div>
+        <div class="thumbnail-row">
+          <div class="thumb active" onclick="setThumb(this,'✨')">✨</div>
+          <div class="thumb" onclick="setThumb(this,'🌿')">🌿</div>
+          <div class="thumb" onclick="setThumb(this,'💧')">💧</div>
+          <div class="thumb" onclick="setThumb(this,'🌸')">🌸</div>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="product-detail-info">
+        <div class="product-detail-category">Skincare / Serums</div>
+        <h1 class="product-detail-name">Organic Glow Serum</h1>
+        <div class="product-detail-rating">
+          <span style="color:var(--accent);">★★★★★</span>
+          <span style="font-size:0.85rem; color:var(--gray-400);">4.9 · 128 reviews</span>
+          <span class="badge badge-green">Certified Organic</span>
+        </div>
+        <div class="product-detail-price">₹1,299 <span class="original">₹1,799</span>
+          <span class="badge badge-red" style="font-size:0.75rem; margin-left:0.5rem;">28% OFF</span>
+        </div>
+        <p style="font-size:0.95rem; line-height:1.8; color:var(--gray-600);">
+          A potent, lightweight serum crafted with cold-pressed Vitamin C, Hyaluronic Acid, and Rosehip extract to visibly brighten, hydrate and firm your skin — in as little as 2 weeks.
+        </p>
+        <ul class="product-highlights">
+          <li>10% Vitamin C (Ascorbic Acid) for luminous skin</li>
+          <li>2% Hyaluronic Acid for deep, lasting hydration</li>
+          <li>Rosehip Oil — rich in Omega 3 &amp; 6 fatty acids</li>
+          <li>Suitable for all skin types including sensitive</li>
+          <li>Cruelty-free, vegan, no parabens or sulfates</li>
+        </ul>
+
+        <!-- Variant -->
+        <div style="margin:1.25rem 0;">
+          <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:0.5rem;">Size</label>
+          <div style="display:flex; gap:0.5rem;">
+            <button class="btn btn-outline btn-sm" onclick="selectSize(this)" style="border-radius:8px; min-width:60px;">30ml</button>
+            <button class="btn btn-primary btn-sm" onclick="selectSize(this)" style="border-radius:8px; min-width:60px;">50ml</button>
+            <button class="btn btn-outline btn-sm" onclick="selectSize(this)" style="border-radius:8px; min-width:60px;">100ml</button>
+          </div>
+        </div>
+
+        <!-- Qty + Add -->
+        <div class="add-to-cart-section">
+          <div class="qty-selector">
+            <button class="qty-btn" data-action="minus">−</button>
+            <input class="qty-input" type="number" value="1" min="1" id="qty-main" />
+            <button class="qty-btn" data-action="plus">+</button>
+          </div>
+          <button class="btn btn-primary btn-lg" style="flex:1;" data-add-cart data-id="p1" data-name="Organic Glow Serum" data-price="1299" data-emoji="✨" data-category="Skincare">🛒 Add to Cart</button>
+          <button class="wishlist-icon-btn" data-wishlist="p1" data-name="Organic Glow Serum" data-price="1299" data-emoji="✨">🤍</button>
+        </div>
+
+        <!-- Shipping Box -->
+        <div class="shipping-box">
+          <div class="ship-row"><span class="icon">🚚</span> Free delivery on orders above ₹999</div>
+          <div class="ship-row"><span class="icon">📦</span> Dispatched within 24 hours — Delhivery / BlueDart</div>
+          <div class="ship-row"><span class="icon">🔄</span> 30-day easy returns, no questions asked</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div style="margin-top:4rem;">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tab-desc">Description</button>
+        <button class="tab-btn" data-tab="tab-ingr">Ingredients</button>
+        <button class="tab-btn" data-tab="tab-how">How to Use</button>
+        <button class="tab-btn" data-tab="tab-reviews">Reviews (128)</button>
+      </div>
+      <div id="tab-desc" class="tab-panel active">
+        <p style="max-width:720px; line-height:1.9;">Our Organic Glow Serum is the result of years of research into botanical skincare. We combine the brightening power of Vitamin C with the deep hydration of Hyaluronic Acid, wrapped in a base of nourishing Aloe Vera juice. Lightweight enough to layer under moisturiser, powerful enough to transform your complexion.</p>
+        <p style="max-width:720px; line-height:1.9; margin-top:1rem;">Suitable for morning and evening use. Fragrance-free, non-comedogenic, and pH-optimised for maximum efficacy.</p>
+      </div>
+      <div id="tab-ingr" class="tab-panel">
+        <p><strong>Key Ingredients:</strong></p>
+        <ul style="margin:0.75rem 0 0 1.25rem;">
+          <li style="margin-bottom:0.5rem;">Ascorbic Acid 10% — Antioxidant, brightens dark spots</li>
+          <li style="margin-bottom:0.5rem;">Sodium Hyaluronate 2% — Attracts &amp; retains moisture</li>
+          <li style="margin-bottom:0.5rem;">Rosa Canina (Rosehip) Seed Oil — Anti-aging, barrier repair</li>
+          <li style="margin-bottom:0.5rem;">Aloe Barbadensis Leaf Juice — Soothing, hydrating base</li>
+          <li style="margin-bottom:0.5rem;">Niacinamide 5% — Pore-minimising, tone-evening</li>
+        </ul>
+        <p style="margin-top:1rem; font-size:0.88rem; color:var(--gray-400);">Full ingredient list on packaging. Patch test recommended before first use.</p>
+      </div>
+      <div id="tab-how" class="tab-panel">
+        <ol style="margin-left:1.25rem;">
+          <li style="margin-bottom:0.75rem;">Cleanse and tone your face thoroughly.</li>
+          <li style="margin-bottom:0.75rem;">Apply 3–4 drops of serum to fingertips.</li>
+          <li style="margin-bottom:0.75rem;">Gently press and pat into skin — do not rub.</li>
+          <li style="margin-bottom:0.75rem;">Allow 60 seconds to absorb before applying moisturiser.</li>
+          <li style="margin-bottom:0.75rem;">Use SPF 30+ in the morning when using Vitamin C.</li>
+          <li style="margin-bottom:0.75rem;">Best results seen after 4–6 weeks of consistent use.</li>
+        </ol>
+      </div>
+      <div id="tab-reviews" class="tab-panel">
+        <div style="display:flex; flex-direction:column; gap:1.5rem; max-width:720px;">
+          <div class="card"><div class="card-body">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+              <strong>Priya M.</strong><span style="color:var(--accent);">★★★★★</span>
+            </div>
+            <p style="font-size:0.9rem;">"Absolutely love this serum! My skin looks so much brighter and feels deeply hydrated. I've been using it for 6 weeks and the results are incredible."</p>
+          </div></div>
+          <div class="card"><div class="card-body">
+            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+              <strong>Ritu S.</strong><span style="color:var(--accent);">★★★★☆</span>
+            </div>
+            <p style="font-size:0.9rem;">"Great product, noticeable improvement in skin tone. The texture is very light and absorbs quickly. Will definitely repurchase."</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div style="margin-top:4rem;">
+      <h2 style="color:var(--green-900); margin-bottom:2rem;">You might also like</h2>
+      <div class="grid-4">
+        <a href="product-4.html" class="product-card" style="text-decoration:none;">
+          <div class="product-img-wrap"><div class="product-img-placeholder">🌿</div></div>
+          <div class="product-info">
+            <div class="product-category">Skincare</div>
+            <div class="product-name">Green Clay Face Mask</div>
+            <div class="product-price">₹549</div>
+          </div>
+        </a>
+        <a href="product-3.html" class="product-card" style="text-decoration:none;">
+          <div class="product-img-wrap"><div class="product-img-placeholder">🌸</div></div>
+          <div class="product-info">
+            <div class="product-category">Wellness</div>
+            <div class="product-name">Forest Essential Oil</div>
+            <div class="product-price">₹649</div>
+          </div>
+        </a>
+        <a href="product-5.html" class="product-card" style="text-decoration:none;">
+          <div class="product-img-wrap"><div class="product-img-placeholder">🍵</div></div>
+          <div class="product-info">
+            <div class="product-category">Nutrition</div>
+            <div class="product-name">Herbal Tea Collection</div>
+            <div class="product-price">₹899</div>
+          </div>
+        </a>
+        <a href="product-2.html" class="product-card" style="text-decoration:none;">
+          <div class="product-img-wrap"><div class="product-img-placeholder">🍶</div></div>
+          <div class="product-info">
+            <div class="product-category">Lifestyle</div>
+            <div class="product-name">Bamboo Water Bottle</div>
+            <div class="product-price">₹799</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo" style="color:white;"><span class="logo-icon">🌿</span>GreenLeaf</div><p>Nature's finest organic products, ethically sourced and sustainably packaged.</p></div>
+      <div class="footer-col"><h4>Shop</h4><ul><li><a href="product-1.html">Organic Serum</a></li><li><a href="product-2.html">Bamboo Bottle</a></li><li><a href="product-3.html">Essential Oil</a></li><li><a href="product-4.html">Clay Mask</a></li><li><a href="product-5.html">Herbal Tea</a></li></ul></div>
+      <div class="footer-col"><h4>Help</h4><ul><li><a href="../cart.html">My Cart</a></li><li><a href="../legal/shipping.html">Shipping Info</a></li><li><a href="../legal/returns.html">Returns</a></li><li><a href="../home.html#contact">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="../legal/privacy.html">Privacy Policy</a></li><li><a href="../legal/terms.html">Terms of Service</a></li><li><a href="../legal/returns.html">Return Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 GreenLeaf Store.</p><div class="footer-payments"><span class="payment-chip">Razorpay</span><span class="payment-chip">UPI</span><span class="payment-chip">Visa</span><span class="payment-chip">Mastercard</span></div></div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+  function setThumb(el, emoji) {
+    document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('main-img').textContent = emoji;
+  }
+  function selectSize(btn) {
+    document.querySelectorAll('[onclick="selectSize(this)"]').forEach(b => {
+      b.className = 'btn btn-outline btn-sm';
+      b.style.borderRadius = '8px'; b.style.minWidth = '60px';
+    });
+    btn.className = 'btn btn-primary btn-sm';
+    btn.style.borderRadius = '8px'; btn.style.minWidth = '60px';
+  }
+</script>
+</body>
+</html>

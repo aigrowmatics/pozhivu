@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bamboo Water Bottle — GreenLeaf Store</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<nav class="navbar"><div class="navbar-inner">
+  <a href="../home.html" class="logo"><span class="logo-icon">🌿</span>GreenLeaf</a>
+  <ul class="nav-links"><li><a href="../home.html">Home</a></li><li><a href="../home.html#products">Products</a></li><li><a href="../home.html#contact">Contact</a></li></ul>
+  <div class="nav-actions"><a href="../cart.html" class="cart-btn">🛒 Cart<span class="cart-badge" id="cart-count" style="display:none">0</span></a></div>
+</div></nav>
+
+<div class="section--sm"><div class="container">
+  <div class="breadcrumb"><a href="../home.html">Home</a><span>/</span><a href="../home.html#products">Lifestyle</a><span>/</span><span>Bamboo Water Bottle</span></div>
+  <div class="grid-2" style="align-items:start; gap:3.5rem;">
+    <div class="product-gallery">
+      <div class="main-image" id="main-img">🍶</div>
+      <div class="thumbnail-row">
+        <div class="thumb active" onclick="setThumb(this,'🍶')">🍶</div>
+        <div class="thumb" onclick="setThumb(this,'💚')">💚</div>
+        <div class="thumb" onclick="setThumb(this,'🌊')">🌊</div>
+      </div>
+    </div>
+    <div class="product-detail-info">
+      <div class="product-detail-category">Lifestyle / Eco Products</div>
+      <h1 class="product-detail-name">Bamboo Water Bottle</h1>
+      <div class="product-detail-rating">
+        <span style="color:var(--accent);">★★★★☆</span>
+        <span style="font-size:0.85rem; color:var(--gray-400);">4.4 · 86 reviews</span>
+        <span class="badge badge-green">Eco Certified</span>
+      </div>
+      <div class="product-detail-price">₹799 <span class="original">₹1,099</span>
+        <span class="badge badge-red" style="font-size:0.75rem; margin-left:0.5rem;">27% OFF</span>
+      </div>
+      <p style="font-size:0.95rem; line-height:1.8; color:var(--gray-600);">A beautifully crafted, BPA-free insulated water bottle made from sustainably harvested bamboo and food-grade stainless steel. Keeps beverages cold for 24 hours and hot for 12 hours.</p>
+      <ul class="product-highlights">
+        <li>Natural bamboo exterior — zero plastic</li>
+        <li>Double-wall vacuum insulation — 24h cold / 12h hot</li>
+        <li>750ml capacity with wide-mouth opening</li>
+        <li>Leak-proof twist cap with carry loop</li>
+        <li>Dishwasher safe inner liner</li>
+      </ul>
+      <div style="margin:1.25rem 0;">
+        <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:0.5rem;">Colour</label>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="btn btn-primary btn-sm" style="border-radius:8px;">Natural Tan</button>
+          <button class="btn btn-outline btn-sm" style="border-radius:8px;">Forest Green</button>
+          <button class="btn btn-outline btn-sm" style="border-radius:8px;">Charcoal</button>
+        </div>
+      </div>
+      <div class="add-to-cart-section">
+        <div class="qty-selector"><button class="qty-btn" data-action="minus">−</button><input class="qty-input" type="number" value="1" min="1" /><button class="qty-btn" data-action="plus">+</button></div>
+        <button class="btn btn-primary btn-lg" style="flex:1;" data-add-cart data-id="p2" data-name="Bamboo Water Bottle" data-price="799" data-emoji="🍶" data-category="Lifestyle">🛒 Add to Cart</button>
+        <button class="wishlist-icon-btn" data-wishlist="p2" data-name="Bamboo Water Bottle" data-price="799" data-emoji="🍶">🤍</button>
+      </div>
+      <div class="shipping-box">
+        <div class="ship-row"><span class="icon">🚚</span> Free delivery on orders above ₹999</div>
+        <div class="ship-row"><span class="icon">📦</span> Shipped in recycled kraft packaging — BlueDart</div>
+        <div class="ship-row"><span class="icon">🔄</span> 30-day easy returns</div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:4rem;">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="tab-desc">Description</button>
+      <button class="tab-btn" data-tab="tab-specs">Specifications</button>
+      <button class="tab-btn" data-tab="tab-reviews">Reviews (86)</button>
+    </div>
+    <div id="tab-desc" class="tab-panel active"><p style="max-width:720px; line-height:1.9;">Our Bamboo Water Bottle is a statement piece for the conscious consumer. Each bottle is uniquely grained — no two are alike — making yours truly one of a kind. The inner stainless steel layer is food-safe and rust-resistant, while the bamboo exterior is finished with a natural beeswax coat that's water-resistant and tactile.</p></div>
+    <div id="tab-specs" class="tab-panel">
+      <table style="width:100%; max-width:500px; border-collapse:collapse; font-size:0.9rem;">
+        <tr style="border-bottom:1px solid var(--gray-200);"><td style="padding:0.75rem 0; color:var(--gray-400);">Capacity</td><td style="padding:0.75rem 0; font-weight:600;">750ml</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-200);"><td style="padding:0.75rem 0; color:var(--gray-400);">Material</td><td style="padding:0.75rem 0; font-weight:600;">Bamboo + 18/8 SS</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-200);"><td style="padding:0.75rem 0; color:var(--gray-400);">Cold retention</td><td style="padding:0.75rem 0; font-weight:600;">24 hours</td></tr>
+        <tr style="border-bottom:1px solid var(--gray-200);"><td style="padding:0.75rem 0; color:var(--gray-400);">Hot retention</td><td style="padding:0.75rem 0; font-weight:600;">12 hours</td></tr>
+        <tr><td style="padding:0.75rem 0; color:var(--gray-400);">Weight</td><td style="padding:0.75rem 0; font-weight:600;">320g</td></tr>
+      </table>
+    </div>
+    <div id="tab-reviews" class="tab-panel">
+      <div class="card" style="max-width:720px;"><div class="card-body"><div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;"><strong>Karthik R.</strong><span style="color:var(--accent);">★★★★★</span></div><p style="font-size:0.9rem;">"Beautiful bottle, keeps my water cold all day. Love the sustainable packaging too!"</p></div></div>
+    </div>
+  </div>
+</div></div>
+
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="logo" style="color:white;"><span class="logo-icon">🌿</span>GreenLeaf</div><p>Nature's finest organic products.</p></div>
+    <div class="footer-col"><h4>Shop</h4><ul><li><a href="product-1.html">Organic Serum</a></li><li><a href="product-2.html">Bamboo Bottle</a></li><li><a href="product-3.html">Essential Oil</a></li><li><a href="product-4.html">Clay Mask</a></li><li><a href="product-5.html">Herbal Tea</a></li></ul></div>
+    <div class="footer-col"><h4>Help</h4><ul><li><a href="../cart.html">My Cart</a></li><li><a href="../legal/shipping.html">Shipping</a></li><li><a href="../legal/returns.html">Returns</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="../legal/privacy.html">Privacy</a></li><li><a href="../legal/terms.html">Terms</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 GreenLeaf Store.</p></div>
+</div></footer>
+<script src="../js/main.js"></script>
+<script>
+function setThumb(el, emoji) {
+  document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('main-img').textContent = emoji;
+}
+</script>
+</body></html>
